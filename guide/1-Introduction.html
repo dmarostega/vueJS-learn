@@ -51,14 +51,24 @@
         <div id="app-8">
             <p>Componente Dinâmico - Personalizado</p>
             <ul>
-                <dtodo-item
+                <xtodo-item
                     v-for="item in groceryList"
                     v-bind:todo="item"
                     v-bind:key="item.id">
-                </dtodo-item>    
+                </xtodo-item>    
             </ul>
         </div>
-  
+
+
+        <!--    EXEMPLO DE COMPONENTE PROFISSIONAL
+        <div id="app">
+            <app-nav></app-nav>
+            <app-view>
+              <app-sidebar></app-sidebar>
+              <app-content></app-content>
+            </app-view>
+          </div>
+   -->
         <script src="js/index.js"></script>
     </body>
 </html>

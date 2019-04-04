@@ -63,7 +63,7 @@ var app7 = new Vue({
 /*
    Components - Dinamic
 */
-Vue.component("dtodo-item", {
+Vue.component("xtodo-item", {
    props:['todo'],
    template: '<li> {{ todo.text }} </li>'
 });
