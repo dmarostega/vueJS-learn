@@ -24,6 +24,7 @@
         </div>
 
         <div id="app-4">
+            <p>{{message}}</p>
             <ul>
                 <li v-for="todo in todos">{{todo.text}}</li>
             </ul>
@@ -34,6 +35,10 @@
             <button v-on:click="reverseMessage">Inverter Mensagem!</button>
         </div>
         
+        <div id="app-6">
+            <p>{{message}}</p>
+            <input v-model="inputMessage">
+        </div>
 
         <script src="js/index.js"></script>
     </body>

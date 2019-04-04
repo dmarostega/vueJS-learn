@@ -4,7 +4,7 @@ var app = new Vue({
     el: "#app",
     data:{
         seen: true,
-        message: 'Ola VueJS!!',
+        message: 'Ola VueJS, v-if & v-bind!!',
         seen_broken:false,
         message_broken: 'Tá ai?',
         messageTitle: "Você carregou essa página em "+new Date().toLocaleDateString()
@@ -20,6 +20,7 @@ var app2 = new Vue({
 var app4 = new Vue({
    el:"#app-4",
    data:{
+      message: "Vue, v-for",
       todos:[
          {text: "Learn Javascript"},
          {text: "Learn Vue"},
@@ -38,4 +39,12 @@ var app5 = new Vue({
          this.message=this.message.split('').reverse().join('')
       }
    }
-})
+});
+
+var app6=new Vue({
+   el:"#app-6",
+   data:{
+      message: "Olá VueJS, v-model !!",
+      inputMessage: "Insera um texto.."
+   }
+});
