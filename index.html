@@ -5,10 +5,35 @@
     </head>
     <body>
         <h2>Estudo VueJS</h2>
-        <p>Paragrafo Qualquer!!</p>
+
         <div id="app">
             <span v-if="seen"> {{message}}, aqui estou!!</span>
+            <br>
+            <span v-if="seen_broken"> {{message_broken}}, não agora!!</span>
+             <span v-bind:title="message">
+                Hover your mouse over me for a few seconds
+                to see my dynamically bound title!
+              </span>
+            
+            <br><br>
+                 
+              <span v-bind:title="messageTitle">
+                Hover your mouse over me for a few seconds
+                to see my dynamically bound title!
+              </span>
         </div>
+
+        <div id="app-4">
+            <ul>
+                <li v-for="todo in todos">{{todo.text}}</li>
+            </ul>
+        </div>
+
+        <div id="app-5">
+            <p>{{message}}</p>
+            <button v-on:click="reverseMessage">Inverter Mensagem!</button>
+        </div>
+        
 
         <script src="js/index.js"></script>
     </body>
