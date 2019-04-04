@@ -2,6 +2,7 @@
 <html lang="pt-br">
     <head>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+        
     </head>
     <body>
         <h2>Estudo VueJS</h2>
@@ -40,6 +41,24 @@
             <input v-model="inputMessage">
         </div>
 
+        <div id="app-7">
+                <p>Componentes Estático</p>
+                <ol>
+                    <todo-item></todo-item>
+                </ol>
+        </div>
+
+        <div id="app-8">
+            <p>Componente Dinâmico - Personalizado</p>
+            <ul>
+                <dtodo-item
+                    v-for="item in groceryList"
+                    v-bind:todo="item"
+                    v-bind:key="item.id">
+                </dtodo-item>    
+            </ul>
+        </div>
+  
         <script src="js/index.js"></script>
     </body>
 </html>

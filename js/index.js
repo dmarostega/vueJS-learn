@@ -48,3 +48,33 @@ var app6=new Vue({
       inputMessage: "Insera um texto.."
    }
 });
+
+/*
+   Components - simple
+*/
+Vue.component("todo-item", {
+   template: '<li>Static Component</li>'
+});
+
+var app7 = new Vue({
+   el:"#app-7"
+});
+
+/*
+   Components - Dinamic
+*/
+Vue.component("dtodo-item", {
+   props:['todo'],
+   template: '<li> {{ todo.text }} </li>'
+});
+
+var app8 = new Vue({
+   el:'#app-8',
+   data:{
+      groceryList:[
+         {id: 0, text: 'Item 1'},
+         {id: 1, text: 'Item 2'},
+         {id: 2, text: 'Item 3'}
+      ]
+   }
+});
