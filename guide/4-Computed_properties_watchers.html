@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>   
+        <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+    </head>
+    <body>
+        <h2>4-Computed_properties_watchers</h2>
+       
+        <div id="app-4">
+            <p>Original: {{ message }}</p>
+            <p>Reverse: {{ reversedMessage }}</p>
+                    {{  message = "Era Uma vez" }}
+            <p> New Original: {{ message }}</p>
+            <p>New Reverse: {{ reversedMessage }}</p>
+            <p-custom></p-custom>
+        </div>
+        <div id="observed">
+            <h3>Observed</h3>
+            <p>{{ firstName + ' ' + lastName}}</p>
+        </div>
+        <div id="computed">
+            <h3>Computed</h3>
+            <p>{{   fullName    }}</p>
+        </div>
+        <div id="setComputed">
+            <h4>Set Computed</h4>
+            {{  fullName.set = "Rafael Almeida2" }}
+        </div>
+
+        <div id="watch-example">
+            <h4>Observadores (Watchers)</h4>
+            <p>
+                Faça uma pergunta de Sim ou Não.
+                <input v-model="question"/>
+            </p>
+            <p>{{   answer }}</p>
+        </div>
+        <script src="../js/4-Computed_properties_watchers.js"></script>
+    </body>
+</html>

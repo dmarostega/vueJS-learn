@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+        
+    </head>
+    <body>
+        <h2>2. Template Syntax</h2>
+        <div id="app-1">
+            <p> {{ foo }}</p>
+            <p>Html tag: {{ hawHtml }} and using v-html directive: <span v-html="hawHtml"></span> </p>
+            <p>Using JS Expression 'number + 1'  (   number: 12   ) {{   number + 1  }}</p>
+            <p>Invalid Expression :  'if (ok) { return message }'  </p>
+        </div>
+        <div id="app-2_shortand">            
+            <h4>Shortand</h4>
+            <h5>v-bind</h5>
+            <a v-bind:href="#">Full Syntax 'v-bind:href="#"'</a>
+            <a :href="#">Shortand ':href="#"'</a>
+            <a :[key]="1">Shortand with dynamic argument ':[key]="1"</a>
+
+            <h5>v-on</h5>
+            <a v-on:click="onClickFunction">Full Syntax 'v-on:click="onClickFunction"'</a>
+            <a @click="onClickFunction">Shortand '@click="onClickFunction"'</a>
+            <a @[event]="doSomething">Shortand with dynamic argument '@[event]="doSomething"'</a>
+        </div>
+        <script src="../js/3-template_syntax.js"></script>
+    </body>
+</html>
