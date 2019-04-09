@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>   
+        <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+        <link rel="stylesheet" href="css/person.css">
+    </head>
+    <body>
+        <h2>5.Ligações de classes e estilo!</h2>
+
+        <div id="bind-class" class="nactive" 
+            v-bind:class="{ active: isActive, 'text-danger': hasError }">
+            <p>div-1 v-bind class inline {{ message }}</p>
+        </div>
+        <div id="bind-object" 
+        v-bind:class="classObject">
+            <p>div-2 v-bind class Objeto Vinculado  {{ message }}</p>
+        </div>
+        <div id="bind-computed" 
+        v-bind:class="classObject">
+            <p>div-3 v-bind class Objeto Computed  {{ message }}</p>
+        </div>   
+        <div id="bind-array" 
+        v-bind:class="[activeClass,errorClass]">
+            <p>div-3 v-bind with array  {{ message }}</p>
+        </div> 
+        <div id="bind-array-ternario" 
+        v-bind:class="[isActive ? activeClass:'',errorClass]">
+            <p>div-4 v-bind with   {{ message }}</p>
+        </div>
+            
+        <div id="with-components">
+            <p>P NORMAL</p>
+            <my-component class="ola mundo ">Ola </my-component>
+            <my-component v-bind:class="{active:isActive}"></my-component>
+        </div>
+        <h3>Estilo Inline de Ligação (v-bind:style="{color: activeColor}" OR v-bind:style="styleObject" )</h3>
+
+        <div id="bind-style">
+            <p v-bind:style="{ color: activeColor, fontSize: fontSize+'px'  }">{{messageObj}}</p>
+            <p v-bind:style="styleObject">{{messageClass}}</p>
+            <p v-bind:style="[styleObject, baseStyle]">With array</p>
+        </div>
+
+
+
+        <script src="../js/5-Class_and_style_bindings.js"></script>
+    </body>
+</html>
