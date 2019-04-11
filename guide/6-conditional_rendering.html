@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>   
+        <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+        <link rel="stylesheet" href="css/person.css">
+    </head>
+    <body>
+        <h2>6. Renderizando condicionalmente e 7. Lista de renderização!</h2>
+        
+    
+        <div id="app">
+                <h4>{{  message }}</h4>
+            <h1 v-if="awesome">Vue is awesome!</h1>
+            <h1 v-else>Oh no 😢</h1>
+
+            <template v-if="ok">
+                <h1>Title</h1>
+                <p>Paragraph 1</p>
+                <p>Paragraph 2</p>
+            </template>
+            <div v-if="Math.random() > 0.5">
+                Now you see me
+            </div>
+            <div v-else>
+                Now you don't
+            </div>
+            <h1 v-show="ok">Hello!</h1>
+
+            <div v-if="type === 'A'">
+                   v-if
+            </div>
+            <div v-else-if="type === 'B'">
+            v-else-if
+            </div>
+            <div v-else-if="type === 'C'">
+                v-else-if
+            </div>
+            <div v-else>
+                v-else
+            </div>
+
+            <!--Exemplo 1: ao alternar loginType não perde-se o valor já digitado.
+                Indica que os inputs fazem parte da mesma paradigma ???    
+            -->
+            <template v-if="loginType === 'username'">
+                <label>Username</label>
+                <input placeholder="Enter your username">
+            </template>
+            <template v-else>
+                <label>Email</label>
+                <input placeholder="Enter your email address">
+            </template>
+
+            <!--Exemplo 1: ao alternar loginType perde-se o valor já digitado.
+                Indica que os inputs são completamente diferentes.
+            -->
+
+            <template v-if="loginType === 'username'">
+                <label>Username</label>
+                <input placeholder="Enter your username" key="username-input">
+            </template>
+            <template v-else>
+                <label>Email</label>
+                <input placeholder="Enter your email address" key="email-input">
+            </template>
+        </div>
+
+
+        <div  id="app-list">
+            <h3>7. Lista de renderização</h3>
+            <ul>
+                <li v-for="item in items">
+                    {{item.message}}
+                </li>
+            </ul>
+            <h4>Propriedades Index e parentMessage</h4>
+            <ul>
+                <li v-for="(item,index) in items">
+                  {{parentMessage}} - {{index}} -  {{item.message}}
+                </li>
+            </ul>
+
+            <h4>v-for com um Objeto</h4>
+            <ul>
+                <li v-for="(value, key) in object">
+                  {{key}} -  {{value}}
+                </li>
+            </ul>
+            <h4>v-for com um Objeto with index</h4>
+            <ul>
+                <li v-for="(value, key,index) in object">
+                 [{{    index   }}]: {{key}} -  {{value}}
+                </li>
+            </ul>
+        </div>
+        <script src="../js/6-Conditional_rendering.js"></script>
+    </body>
+</html>
