@@ -11,7 +11,7 @@
         
     
         <div id="app">
-                <h4>{{  message }}</h4>
+                <h3>{{  message }}</h3>
             <h1 v-if="awesome">Vue is awesome!</h1>
             <h1 v-else>Oh no 😢</h1>
 
@@ -69,31 +69,43 @@
 
 
         <div  id="app-list">
-            <h3>7. Lista de renderização</h3>
+            <h2>7. Lista de renderização</h2>
             <ul>
                 <li v-for="item in items">
                     {{item.message}}
                 </li>
             </ul>
-            <h4>Propriedades Index e parentMessage</h4>
+            <h3>Propriedades Index e parentMessage</h3>
+            <!--
+                {{  items.push({message:'Mais um Item Adicionado!'})}}
+            -->
+
             <ul>
-                <li v-for="(item,index) in items">
+
+                 <!--    :key="..." para identificar componentes, caso seja necessário 
+                monitorar ordem de compoenentes 
+                <li v-for="(item,index) in items" :key="item.id">            
+            -->
+                <li v-for="(item,index) in items" :Key="item.id">
                   {{parentMessage}} - {{index}} -  {{item.message}}
                 </li>
             </ul>
 
-            <h4>v-for com um Objeto</h4>
+            <h3>v-for com um Objeto</h3>
             <ul>
                 <li v-for="(value, key) in object">
                   {{key}} -  {{value}}
                 </li>
             </ul>
-            <h4>v-for com um Objeto with index</h4>
+            <h3>v-for com um Objeto with index</h3>
             <ul>
-                <li v-for="(value, key,index) in object">
+               
+                <li v-for="(value, key,index) in object" :Key="key">
                  [{{    index   }}]: {{key}} -  {{value}}
                 </li>
             </ul>
+            <h3>Detecção de mudança de matriz.</h3>
+
         </div>
         <script src="../js/6-Conditional_rendering.js"></script>
     </body>

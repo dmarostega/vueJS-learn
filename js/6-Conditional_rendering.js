@@ -20,7 +20,7 @@
   *     Lista de Renderização v-for
   */
 
-  
+
  new Vue({
      el:"#app-list",
      data:{
@@ -36,4 +36,5 @@
              age:23
          }
      }
- })
+ }).items.push({message:"Novo Item..."})
+   .sort()
